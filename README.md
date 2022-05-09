@@ -1,2 +1,2 @@
 # pythonscraping
-In the current repository all my python scrappers are stored.
+In the current repository all my python scrappers are stored. All my comments you can find in a file. I am trying to describe my solutions as fully as possible using simple syntax. For more information (data analysis and etc.) you can join my <a href = 'https://t.me/+MfCO-hfIYRRhYmIy'>tg private channel</a>. Best wishes...
