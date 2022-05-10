@@ -32,4 +32,4 @@ for i in range(0,2000):
 headers = ['hash', 'date', 'sum_btc', 'sum_usd']
 
 df = pd.DataFrame(data = list, columns=headers)
-df.to_csv(r'C:\Users\polianskii\Desktop\bitcoin_transactions.csv')
+df.to_csv(r'C:\Users\poliansky\Desktop\bitcoin_transactions.csv')
