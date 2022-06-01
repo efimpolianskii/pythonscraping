@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
+import pgeocode
 
 s = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA',
             'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME',
@@ -75,6 +76,11 @@ def dataset(links):
             data.append([type, address_1, address_2, open_hours, city, state, postal_code])
     headers = ['type', 'address_1', 'address_2', 'open_hours', 'city', 'state', 'postal_code']
     df = pd.DataFrame(data = data, columns=headers)
+    df['postal_code'] = df['postal_code'].astype(str)
+    nomi = pgeocode.Nominatim('us')
+    info = nomi.query_postal_code(df['postal_code'])
+    df['latitude'] = info.latitude 
+    df['longitude'] = info.longitude
     return(df)
 
 dataset(urls(lower_state(s)))
